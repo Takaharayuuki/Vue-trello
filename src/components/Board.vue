@@ -5,13 +5,19 @@
   </header>
   <main>
     <p class="info-line">All: 0 tasks</p>
+    <ListAdd />
   </main>
 </div>
 </template>
 
 <script>
-export default {
+import ListAdd from './ListAdd.vue'
 
+export default {
+  name: 'Board',
+  components: {
+    ListAdd
+  }
 }
 </script>
 
