@@ -6,7 +6,7 @@
       <div class="deletelist" @click="removeList">×</div>
     </div>
     <div class="cardInputBox">
-      <draggable 
+      <draggable
         group="cards"
         :list="cards"
         @end="$emit('change')"
