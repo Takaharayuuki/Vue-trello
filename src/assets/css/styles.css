@@ -1,5 +1,5 @@
 html {
-  background: white;
+  background: lightblue;
   font-family: 'Avenir', Helvetica, Arial, 'system-ui', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -10,7 +10,7 @@ html {
 }
 
 header {
-  background: white;
+  background: lightblue;
   height: 70px;
   color: #333;
   font-style: italic;
@@ -83,7 +83,7 @@ main {
 .active .text-input {
   background-color: #fff;
 }
-.addable .add-button {
+.addable {
   background-color: #00d78f;
   pointer-events: auto;
   cursor: pointer;
