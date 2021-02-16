@@ -5,20 +5,23 @@
       <p class="list-counter">total: {{ totalCardInList }}</p>
       <div class="deletelist" @click="removeList">×</div>
     </div>
-    <draggable 
-      group="cards"
-      :list="cards"
-      @end="$emit('change')"
-      >
-      <card
-        v-for="(item, index) in cards"
-        :body="item.body"
-        :key="item.id"
-        :cardIndex="index"
-        :listIndex="listIndex"
-      />
-      <CardAdd :listIndex='listIndex' />
-    </draggable>
+    <div class="cardInputBox">
+      <draggable 
+        group="cards"
+        :list="cards"
+        @end="$emit('change')"
+        >
+        <card
+          v-for="(item, index) in cards"
+          :body="item.body"
+          :key="item.id"
+          :cardIndex="index"
+          :listIndex="listIndex"
+          :text="item.text"
+        />
+        <CardAdd :listIndex='listIndex' />
+      </draggable>
+    </div>
   </div>
 </template>
 

@@ -43,6 +43,21 @@ main {
   width: 320px;
 }
 
+.title-input {
+  padding: 20px 15px;
+  width: calc(100% - 30px);
+  background-color: #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  font-family: "Noto Sans Japanese", "Noto Sans", 'system-ui', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #242424;
+  cursor: pointer;
+  overflow: overlay;
+}
+
 .text-input {
   padding: 20px 15px;
   width: calc(100% - 30px);
@@ -58,7 +73,26 @@ main {
   overflow: overlay;
 }
 
+.cardText-input {
+  padding: 10px 15px;
+  width: calc(100% - 30px);
+  background-color: #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  font-family: "Noto Sans Japanese", "Noto Sans", 'system-ui', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #242424;
+  cursor: pointer;
+  overflow: overlay;
+}
+
 .text-input:focus {
+  outline: 0;
+  cursor: initial;
+}
+.title-input:focus {
   outline: 0;
   cursor: initial;
 }
@@ -142,8 +176,7 @@ main {
   margin-top: 10px;
   margin-bottom: 10px;
   position: relative;
-  display: flex;
-  padding: 30px 15px 40px;
+  padding: 30px 15px 10px;
   background-color: #fff;
   border-radius: 8px;
   width: 260px;
@@ -165,7 +198,14 @@ main {
 }
 
 .body {
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: bold;
   width: 100%;
   word-wrap: break-word;
+}
+
+.cardInputBox {
+  padding: 10px 0;
+  background-color: #fff;
+  border-radius: 8px;
 }

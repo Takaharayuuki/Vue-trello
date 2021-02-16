@@ -5,7 +5,7 @@
   </header>
   <main>
     <p class="info-line">All: {{ totalTasks }} tasks</p>
-    <div class="list-index">
+    <draggable :list="lists" class="list-index" @end="movingList">
       <List
         v-for="(item, index) in lists"
         :key="item.id"
@@ -15,12 +15,13 @@
         @change="movingCard"
        />
       <ListAdd />
-    </div>
+    </draggable>
   </main>
 </div>
 </template>
 
 <script>
+import draggable from 'vuedraggable'
 import ListAdd from './ListAdd.vue'
 import List from './List.vue'
 import { mapState } from 'vuex'
@@ -29,7 +30,8 @@ export default {
   name: 'Board',
   components: {
     List,
-    ListAdd
+    ListAdd,
+    draggable
   },
   computed: {
     ...mapState([
@@ -41,6 +43,9 @@ export default {
   },
   methods: {
     movingCard() {
+      this.$store.dispatch('updateList', { lists: this.lists })
+    },
+    movingList() {
       this.$store.dispatch('updateList', { lists: this.lists })
     }
   },

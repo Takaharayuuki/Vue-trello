@@ -6,6 +6,7 @@
     <div class="body">
       {{ body }}
     </div>
+    <p>{{ text }}</p>
   </div>
 </template>
 
@@ -16,6 +17,10 @@ export default {
     body: {
       type: String,
       required: true
+    },
+    text: {
+      type: String,
+      required: false
     },
     listIndex: {
       type: Number,

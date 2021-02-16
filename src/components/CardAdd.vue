@@ -2,14 +2,22 @@
   <form :class="classList" class="addcard" @submit.prevent="addCardToList">
     <input v-model="body"
       type="text"
-      class="text-input"
-      placeholder="Add new card"
+      class="title-input"
+      placeholder="Add new card title"
       @focusin="startEditing"
       @focusout="finishEditing"
     />
+    <input 
+    v-model="text"
+    type="text"
+    class="cardText-input"
+    placeholder="Add text"
+    @focusin="startEditing"
+    @focusout="finishEditing"
+    style="margin-top:15px;">
     <button
       type="submit"
-      :class="titleExists"
+      :class="titleExists || textExists"
       class="add-button"
       v-if="isEditing || titleExists">
       Add
@@ -29,13 +37,15 @@ export default {
   data() {
     return {
       body: '',
+      text: '',
       isEditing: false,
     }
   },
   methods: {
     addCardToList() {
-      this.$store.dispatch('addCardToList', { body: this.body, listIndex: this.listIndex })
+      this.$store.dispatch('addCardToList', { body: this.body, text:this.text, listIndex: this.listIndex })
       this.body = ''
+      this.text = ''
     },
     startEditing() {
       this.isEditing = true
@@ -49,7 +59,10 @@ export default {
       return this.isEditing ? 'active' : ''
     },
     titleExists() {
-      return this.body.length > 0 ? 'addable' : ''
+      return this.body.length > 0  ? 'addable' : ''
+    },
+    textExists() {
+      return this.text.length > 0  ? 'addable' : ''
     },
   }
 }

@@ -13,6 +13,7 @@ const store = new Vuex.Store({
         cards: [
           { body: 'English' },
           { body: 'Mathematics' },
+          { text: 'テキスト'}
         ]
       },
       {
@@ -35,7 +36,7 @@ const store = new Vuex.Store({
       state.lists.splice(payload.listIndex,1)
     },
     addCardToList(state, payload) {
-      state.lists[payload.listIndex].cards.push({ body: payload.body })
+      state.lists[payload.listIndex].cards.push({ body: payload.body , text: payload.text })
     },
     removeCardFromList(state, payload) {
       state.lists[payload.listIndex].cards.splice(payload.cardIndex, 1)
