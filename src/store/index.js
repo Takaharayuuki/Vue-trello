@@ -58,6 +58,9 @@ const store = new Vuex.Store({
   modules: {
   },
   getters: {
+    totalTasks(state) {
+      return state.lists.length
+    },
   }
 })
 
