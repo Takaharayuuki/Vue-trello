@@ -12,6 +12,7 @@
         :title="item.title"
         :listIndex="index"
         :cards="item.cards"
+        @change="movingCard"
        />
       <ListAdd />
     </div>
@@ -36,6 +37,11 @@ export default {
     ]),
     totalTasks() {
       return this.$store.getters.totalTasks
+    }
+  },
+  methods: {
+    movingCard() {
+      this.$store.dispatch('updateList', { lists: this.lists })
     }
   },
 }

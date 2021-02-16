@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  name: 'Card',
   props: {
     body: {
       type: String,
